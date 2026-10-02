@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Giskard (GSK) — 1 GSK = 1 human on Earth. A WorldChain token anchored to UN World Population Prospects.">
+  <meta property="og:title" content="Giskard (GSK)">
+  <meta property="og:description" content="1 GSK = 1 human on Earth. Supply anchored to UN World Population Prospects.">
+  <meta property="og:image" content="https://i.imgur.com/qdYe225.png">
+  <meta property="og:url" content="https://giskard.fans">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@giskard2026">
+  <title>Giskard (GSK) — 1 Token, 1 Human</title>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --border: #1e1e2e;
+      --accent: #7c3aed;
+      --accent2: #06b6d4;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --green: #22c55e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Animated background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(124,58,237,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(6,182,212,0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* HEADER */
+    header {
+      padding: 48px 0 0;
+      text-align: center;
+    }
+
+    .logo-wrap {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .logo-wrap img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 32px rgba(124,58,237,0.4);
+    }
+
+    .live-dot {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      width: 16px;
+      height: 16px;
+      background: var(--green);
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #e2e8f0, #7c3aed, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .tagline span {
+      color: var(--accent2);
+      font-weight: 600;
+    }
+
+    /* CONCEPT BANNER */
+    .concept {
+      margin: 40px 0;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.08));
+      border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .concept-stat {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.04em;
+    }
+
+    .concept p {
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    /* STATS GRID */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-card .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .stat-card .value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .stat-card .value.accent { color: var(--accent); }
+    .stat-card .value.accent2 { color: var(--accent2); }
+
+    /* SECTION */
+    section {
+      margin: 40px 0;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 22px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* CONTRACT BOX */
+    .contract-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+
+    .contract-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contract-row:last-child { border-bottom: none; }
+
+    .contract-row .key {
+      font-size: 0.8rem;
+      color: var(--muted);
+      min-width: 120px;
+    }
+
+    .contract-row .val {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 0.82rem;
+      color: var(--accent2);
+      word-break: break-all;
+      text-align: right;
+    }
+
+    .contract-row .val a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contract-row .val a:hover { text-decoration: underline; }
+
+    /* ABOUT */
+    .about-text {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-text p { margin-bottom: 14px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text); }
+
+    /* POOLS TABLE */
+    .pools {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .pool-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pool-row:last-child { border-bottom: none; }
+
+    .pool-pair {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .pool-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: rgba(124,58,237,0.2);
+      color: var(--accent);
+      margin-left: 8px;
+    }
+
+    .pool-addr {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .pool-link {
+      color: var(--accent2);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .pool-link:hover { text-decoration: underline; }
+
+    /* LINKS GRID */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .link-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .link-card .icon {
+      font-size: 1.4rem;
+    }
+
+    .link-card .link-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .link-card .link-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* HOW TO BUY */
+    .steps {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .step-content .step-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .step-content .step-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .step-content .step-desc code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(124,58,237,0.15);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      color: var(--accent2);
+    }
+
+    /* FOOTER */
+    footer {
+      margin: 60px 0 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+    }
+
+    footer a { color: var(--accent2); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .concept-stat { font-size: 2rem; }
+      .contract-row { flex-direction: column; align-items: flex-start; }
+      .contract-row .val { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="logo-wrap">
+        <img src="https://i.imgur.com/qdYe225.png" alt="Giskard GSK Logo">
+        <span class="live-dot"></span>
+      </div>
+      <h1>Giskard (GSK)</h1>
+      <p class="tagline">1 token. 1 human. <span>8.16 billion of us.</span></p>
+    </header>
+
+    <!-- CONCEPT -->
+    <div class="concept">
+      <div class="concept-stat">1 GSK = 1 Human</div>
+      <p>Total supply is anchored to the <strong style="color:#e2e8f0">UN World Population Prospects</strong>.<br>
+      No arbitrary inflation. No VC allocations. A token for all of humanity.</p>
+    </div>
+
+    <!-- KEY STATS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="label">Total Supply</div>
+        <div class="value accent">8,161,972,572</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Decimals</div>
+        <div class="value">18</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Network</div>
+        <div class="value accent2">WorldChain</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Chain ID</div>
+        <div class="value">480</div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section>
+      <h2>About Giskard</h2>
+      <div class="about-text">
+        <p>
+          <strong>Giskard (GSK)</strong> is a WorldChain token with a single, powerful premise: 
+          one token for every human being on Earth. The total supply of <strong>8,161,972,572 GSK</strong> 
+          mirrors the current global population figure from the United Nations World Population Prospects — 
+          making it one of the few tokens with genuine real-world anchoring.
+        </p>
+        <p>
+          Built on <strong>WorldChain</strong> (Chain ID: 480) — the blockchain ecosystem designed 
+          for the Worldcoin/World ID network — GSK is positioned at the intersection of human identity, 
+          decentralized finance, and AI-powered futures. WorldChain provides near-zero gas fees and 
+          native human verification.
+        </p>
+        <p>
+          GSK is tradeable on <strong>Uniswap V3</strong> against both WLD and USDC.e, with 1% fee 
+          pools providing liquidity. The contract is non-upgradeable and permissionless — the supply 
+          is fixed and the oracle is transparent.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTRACT INFO -->
+    <section>
+      <h2>Contract Information</h2>
+      <div class="contract-box">
+        <div class="contract-row">
+          <span class="key">GSK Contract</span>
+          <span class="val">
+            <a href="https://worldchain-mainnet.explorer.alchemy.com/address/0xdBfDf67A5fC32498297eCa1c7C596ad901674F12" target="_blank">
+              0xdBfDf67A5fC32498297eCa1c7C596ad901674F12
+            </a>
+          </span>
+        </div>
+        <div class="contract-row">
+          <span class="key">Network</span>
+          <span class="val" style="color:#e2e8f0">WorldChain Mainnet (ID: 480)</span>
+        </div>
+        <div class="contract-row">
+          <span class="key">Standard</span>
+          <span class="val" style="color:#e2e8f0">ERC-20 · 18 decimals</span>
+        </div>
+        <div class="contract-row">
+          <span class="key">Total Supply</span>
+          <span class="val" style="color:#e2e8f0">8,161,972,572 GSK</span>
+        </div>
+        <div class="contract-row">
+          <span class="key">Block Explorer</span>
+          <span class="val">
+            <a href="https://worldchain-mainnet.explorer.alchemy.com/address/0xdBfDf67A5fC32498297eCa1c7C596ad901674F12" target="_blank">
+              WorldChain Explorer ↗
+            </a>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNISWAP POOLS -->
+    <section>
+      <h2>Trading on Uniswap V3</h2>
+      <div class="pools">
+        <div class="pool-row">
+          <div>
+            <div class="pool-pair">
+              GSK / WLD <span class="pool-badge">1% fee</span>
+            </div>
+            <div class="pool-addr">0x923422071e0Ec06C93d315471Ff0655903C9F166</div>
+          </div>
+          <a class="pool-link" href="https://app.uniswap.org/explore/pools/worldchain/0x923422071e0Ec06C93d315471Ff0655903C9F166" target="_blank">
+            Trade ↗
+          </a>
+        </div>
+        <div class="pool-row">
+          <div>
+            <div class="pool-pair">
+              GSK / USDC.e <span class="pool-badge">1% fee</span>
+            </div>
+            <div class="pool-addr">0x87A151428ed2BCF3D49ec6eCafd7622214d24B44</div>
+          </div>
+          <a class="pool-link" href="https://app.uniswap.org/explore/pools/worldchain/0x87A151428ed2BCF3D49ec6eCafd7622214d24B44" target="_blank">
+            Trade ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO BUY -->
+    <section>
+      <h2>How to Buy GSK</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Get a WorldChain-compatible wallet</div>
+            <div class="step-desc">Use MetaMask or any EVM wallet. Add WorldChain network: <code>chainId: 480</code>, RPC: <code>worldchain-mainnet.g.alchemy.com/public</code></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Bridge funds to WorldChain</div>
+            <div class="step-desc">Bridge ETH or USDC to WorldChain via the official World App or a cross-chain bridge. WLD tokens work natively.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Swap on Uniswap V3</div>
+            <div class="step-desc">Go to <a href="https://app.uniswap.org" target="_blank" style="color:var(--accent2)">app.uniswap.org</a>, select WorldChain, and swap WLD or USDC.e for GSK. Import token: <code>0xdBfDf67A5fC32498297eCa1c7C596ad901674F12</code></div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Hold your share of humanity</div>
+            <div class="step-desc">Each GSK represents one human being. Welcome to the network.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINKS -->
+    <section>
+      <h2>Links</h2>
+      <div class="links-grid">
+        <a class="link-card" href="https://x.com/giskard2026" target="_blank">
+          <span class="icon">𝕏</span>
+          <div>
+            <div class="link-label">X (Twitter)</div>
+            <div class="link-sub">@giskard2026</div>
+          </div>
+        </a>
+        <a class="link-card" href="https://app.uniswap.org/explore/pools/worldchain/0x923422071e0Ec06C93d315471Ff0655903C9F166" target="_blank">
+          <span class="icon">🦄</span>
+          <div>
+            <div class="link-label">Uniswap</div>
+            <div class="link-sub">GSK/WLD Pool</div>
+          </div>
+        </a>
+        <a class="link-card" href="https://app.uniswap.org/explore/pools/worldchain/0x87A151428ed2BCF3D49ec6eCafd7622214d24B44" target="_blank">
+          <span class="icon">🦄</span>
+          <div>
+            <div class="link-label">Uniswap</div>
+            <div class="link-sub">GSK/USDC.e Pool</div>
+          </div>
+        </a>
+        <a class="link-card" href="https://worldchain-mainnet.explorer.alchemy.com/address/0xdBfDf67A5fC32498297eCa1c7C596ad901674F12" target="_blank">
+          <span class="icon">🔍</span>
+          <div>
+            <div class="link-label">Explorer</div>
+            <div class="link-sub">WorldChain</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Giskard (GSK) · WorldChain · Contract: 0xdBfDf67...4F12</p>
+      <p style="margin-top:8px">
+        <a href="https://x.com/giskard2026">@giskard2026</a> · 
+        <a href="https://worldchain-mainnet.explorer.alchemy.com/address/0xdBfDf67A5fC32498297eCa1c7C596ad901674F12">Block Explorer</a> · 
+        <a href="https://app.uniswap.org">Uniswap V3</a>
+      </p>
+      <p style="margin-top:12px; color:#475569">
+        Not financial advice. DYOR. Supply anchored to UN World Population Prospects 2024.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
