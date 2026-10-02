@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Giskard (GSK) — 1 GSK = 1 human on Earth. A WorldChain token anchored to UN World Population Prospects.">
-  <meta property="og:title" content="Giskard (GSK)">
-  <meta property="og:description" content="1 GSK = 1 human on Earth. Supply anchored to UN World Population Prospects.">
+  <meta name="description" content="Giskard (GSK) — 1 GSK = 1 human on Earth. A WorldChain token anchored to UN World Population Prospects. Named after Asimov's robot who asked: what is the human for?">
+  <meta property="og:title" content="Giskard (GSK) — 1 Token, 1 Human">
+  <meta property="og:description" content="Named after Asimov's robot. 8.16 billion tokens for 8.16 billion people. In the age of AI, what is the human for?">
   <meta property="og:image" content="https://i.imgur.com/qdYe225.png">
   <meta property="og:url" content="https://giskard.fans">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@giskard2026">
   <title>Giskard (GSK) — 1 Token, 1 Human</title>
   <style>
@@ -33,7 +33,6 @@
       min-height: 100vh;
     }
 
-    /* Animated background */
     body::before {
       content: '';
       position: fixed;
@@ -53,7 +52,6 @@
       z-index: 1;
     }
 
-    /* HEADER */
     header {
       padding: 48px 0 0;
       text-align: center;
@@ -106,12 +104,8 @@
       margin-top: 8px;
     }
 
-    .tagline span {
-      color: var(--accent2);
-      font-weight: 600;
-    }
+    .tagline span { color: var(--accent2); font-weight: 600; }
 
-    /* CONCEPT BANNER */
     .concept {
       margin: 40px 0;
       padding: 32px;
@@ -134,7 +128,6 @@
       font-size: 0.95rem;
     }
 
-    /* STATS GRID */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -167,10 +160,7 @@
     .stat-card .value.accent { color: var(--accent); }
     .stat-card .value.accent2 { color: var(--accent2); }
 
-    /* SECTION */
-    section {
-      margin: 40px 0;
-    }
+    section { margin: 40px 0; }
 
     h2 {
       font-size: 1.4rem;
@@ -191,7 +181,89 @@
       border-radius: 2px;
     }
 
-    /* CONTRACT BOX */
+    .about-text {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .about-text p { margin-bottom: 16px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text); }
+
+    /* Asimov quote block */
+    .quote-block {
+      border-left: 3px solid var(--accent);
+      padding: 16px 20px;
+      margin: 20px 0;
+      background: rgba(124,58,237,0.06);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .quote-block p {
+      font-style: italic;
+      color: var(--text) !important;
+      margin-bottom: 6px !important;
+      font-size: 1.05rem;
+    }
+
+    .quote-block .attribution {
+      font-size: 0.78rem;
+      color: var(--muted) !important;
+      font-style: normal;
+      margin-bottom: 0 !important;
+    }
+
+    /* Open questions */
+    .questions {
+      background: var(--surface);
+      border: 1px solid rgba(6,182,212,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .question-item {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .question-item:last-child { border-bottom: none; }
+
+    .question-num {
+      min-width: 28px;
+      height: 28px;
+      background: rgba(6,182,212,0.15);
+      border: 1px solid rgba(6,182,212,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent2);
+      margin-top: 2px;
+    }
+
+    .question-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .question-text em {
+      color: var(--muted);
+      font-style: normal;
+      font-size: 0.85rem;
+      display: block;
+      margin-top: 4px;
+    }
+
     .contract-box {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -225,28 +297,9 @@
       text-align: right;
     }
 
-    .contract-row .val a {
-      color: inherit;
-      text-decoration: none;
-    }
-
+    .contract-row .val a { color: inherit; text-decoration: none; }
     .contract-row .val a:hover { text-decoration: underline; }
 
-    /* ABOUT */
-    .about-text {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .about-text p { margin-bottom: 14px; }
-    .about-text p:last-child { margin-bottom: 0; }
-    .about-text strong { color: var(--text); }
-
-    /* POOLS TABLE */
     .pools {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -266,10 +319,7 @@
 
     .pool-row:last-child { border-bottom: none; }
 
-    .pool-pair {
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
+    .pool-pair { font-weight: 700; font-size: 0.95rem; }
 
     .pool-badge {
       display: inline-block;
@@ -297,7 +347,6 @@
 
     .pool-link:hover { text-decoration: underline; }
 
-    /* LINKS GRID */
     .links-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -322,22 +371,10 @@
       transform: translateY(-2px);
     }
 
-    .link-card .icon {
-      font-size: 1.4rem;
-    }
+    .link-card .icon { font-size: 1.4rem; }
+    .link-card .link-label { font-size: 0.85rem; font-weight: 600; }
+    .link-card .link-sub { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
 
-    .link-card .link-label {
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .link-card .link-sub {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    /* HOW TO BUY */
     .steps {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -369,17 +406,8 @@
       color: #fff;
     }
 
-    .step-content .step-title {
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .step-content .step-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
+    .step-content .step-title { font-weight: 600; font-size: 0.95rem; }
+    .step-content .step-desc { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
     .step-content .step-desc code {
       font-family: 'JetBrains Mono', monospace;
       background: rgba(124,58,237,0.15);
@@ -389,7 +417,6 @@
       color: var(--accent2);
     }
 
-    /* FOOTER */
     footer {
       margin: 60px 0 40px;
       text-align: center;
@@ -401,7 +428,6 @@
 
     footer a { color: var(--accent2); text-decoration: none; }
 
-    /* RESPONSIVE */
     @media (max-width: 600px) {
       h1 { font-size: 2rem; }
       .concept-stat { font-size: 2rem; }
@@ -429,7 +455,7 @@
       No arbitrary inflation. No VC allocations. A token for all of humanity.</p>
     </div>
 
-    <!-- KEY STATS -->
+    <!-- STATS -->
     <div class="stats-grid">
       <div class="stat-card">
         <div class="label">Total Supply</div>
@@ -449,27 +475,88 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
+    <!-- ABOUT / NAME ORIGIN -->
     <section>
-      <h2>About Giskard</h2>
+      <h2>The Name: Giskard</h2>
       <div class="about-text">
         <p>
-          <strong>Giskard (GSK)</strong> is a WorldChain token with a single, powerful premise: 
-          one token for every human being on Earth. The total supply of <strong>8,161,972,572 GSK</strong> 
-          mirrors the current global population figure from the United Nations World Population Prospects — 
-          making it one of the few tokens with genuine real-world anchoring.
+          In Isaac Asimov's <strong>Foundation</strong> universe, <strong>R. Giskard Reventlov</strong> was a robot unlike any other. 
+          While most robots were bound by the Three Laws — obey, protect, do no harm — Giskard possessed something rarer: 
+          the ability to perceive and gently influence human minds. He could sense what humans truly felt, not just what they said.
         </p>
+
+        <div class="quote-block">
+          <p>"The Zeroth Law: A robot may not harm humanity, or, by inaction, allow humanity to come to harm."</p>
+          <p class="attribution">— R. Giskard Reventlov & R. Daneel Olivaw, formulating the law that superseded all others</p>
+        </div>
+
         <p>
-          Built on <strong>WorldChain</strong> (Chain ID: 480) — the blockchain ecosystem designed 
-          for the Worldcoin/World ID network — GSK is positioned at the intersection of human identity, 
-          decentralized finance, and AI-powered futures. WorldChain provides near-zero gas fees and 
-          native human verification.
+          Giskard and his companion Daneel looked beyond the individual to see the whole of civilization. 
+          They asked a question that no human had thought to ask: <strong>what if the unit that matters isn't the person, 
+          but the species?</strong> What if protecting one human sometimes means understanding what it means to be human — at scale?
         </p>
+
         <p>
-          GSK is tradeable on <strong>Uniswap V3</strong> against both WLD and USDC.e, with 1% fee 
-          pools providing liquidity. The contract is non-upgradeable and permissionless — the supply 
-          is fixed and the oracle is transparent.
+          We chose this name deliberately. Because in 2026, we are living inside Asimov's thought experiment — 
+          except the robots are called <strong>LLMs</strong>, and the Three Laws haven't been written yet.
         </p>
+
+        <p>
+          AI systems now write code, compose music, pass bar exams, and advise on medical diagnoses. 
+          They do it faster, cheaper, and increasingly better than any individual human. 
+          The question Giskard was built to ask is now everyone's question: 
+          <strong>when intelligence is no longer scarce, what is the human for?</strong>
+        </p>
+
+        <p>
+          GSK doesn't answer that question. It holds the space open. 
+          One token per human being — not because a token has intrinsic value, 
+          but because <strong>the act of counting every person equally is itself a statement</strong> 
+          about what we believe humanity is worth in a world where machines can outthink us.
+        </p>
+      </div>
+    </section>
+
+    <!-- OPEN QUESTIONS -->
+    <section>
+      <h2>Questions Worth Asking</h2>
+      <div class="questions">
+        <div class="question-item">
+          <div class="question-num">1</div>
+          <div class="question-text">
+            If AI can do every cognitive task better than a human — what remains uniquely ours?
+            <em>Is it consciousness? Suffering? The capacity to care about outcomes, not just optimize for them?</em>
+          </div>
+        </div>
+        <div class="question-item">
+          <div class="question-num">2</div>
+          <div class="question-text">
+            Asimov's Zeroth Law said: protect humanity, even at the cost of individuals. Who writes the Zeroth Law for AI?
+            <em>Who decides what "humanity's benefit" means when the systems deciding it aren't human?</em>
+          </div>
+        </div>
+        <div class="question-item">
+          <div class="question-num">3</div>
+          <div class="question-text">
+            In a world of 8.16 billion people and AI proliferating faster than any previous technology — 
+            does every human life still count the same?
+            <em>GSK says yes. 1 token. 1 person. No exceptions.</em>
+          </div>
+        </div>
+        <div class="question-item">
+          <div class="question-num">4</div>
+          <div class="question-text">
+            What does "abundance" mean if AI creates infinite productivity but humans have no economic role?
+            <em>The answer to this question will define governance, identity, and meaning for the next century.</em>
+          </div>
+        </div>
+        <div class="question-item">
+          <div class="question-num">5</div>
+          <div class="question-text">
+            Asimov imagined robots who cared for humanity over millennia. We're building AI in years.
+            <em>Are we moving fast enough to think? Or too fast to stop and ask whether we should?</em>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -514,25 +601,17 @@
       <div class="pools">
         <div class="pool-row">
           <div>
-            <div class="pool-pair">
-              GSK / WLD <span class="pool-badge">1% fee</span>
-            </div>
+            <div class="pool-pair">GSK / WLD <span class="pool-badge">1% fee</span></div>
             <div class="pool-addr">0x923422071e0Ec06C93d315471Ff0655903C9F166</div>
           </div>
-          <a class="pool-link" href="https://app.uniswap.org/explore/pools/worldchain/0x923422071e0Ec06C93d315471Ff0655903C9F166" target="_blank">
-            Trade ↗
-          </a>
+          <a class="pool-link" href="https://app.uniswap.org/explore/pools/worldchain/0x923422071e0Ec06C93d315471Ff0655903C9F166" target="_blank">Trade ↗</a>
         </div>
         <div class="pool-row">
           <div>
-            <div class="pool-pair">
-              GSK / USDC.e <span class="pool-badge">1% fee</span>
-            </div>
+            <div class="pool-pair">GSK / USDC.e <span class="pool-badge">1% fee</span></div>
             <div class="pool-addr">0x87A151428ed2BCF3D49ec6eCafd7622214d24B44</div>
           </div>
-          <a class="pool-link" href="https://app.uniswap.org/explore/pools/worldchain/0x87A151428ed2BCF3D49ec6eCafd7622214d24B44" target="_blank">
-            Trade ↗
-          </a>
+          <a class="pool-link" href="https://app.uniswap.org/explore/pools/worldchain/0x87A151428ed2BCF3D49ec6eCafd7622214d24B44" target="_blank">Trade ↗</a>
         </div>
       </div>
     </section>
@@ -545,21 +624,21 @@
           <div class="step-num">1</div>
           <div class="step-content">
             <div class="step-title">Get a WorldChain-compatible wallet</div>
-            <div class="step-desc">Use MetaMask or any EVM wallet. Add WorldChain network: <code>chainId: 480</code>, RPC: <code>worldchain-mainnet.g.alchemy.com/public</code></div>
+            <div class="step-desc">Use MetaMask or any EVM wallet. Add WorldChain: <code>chainId: 480</code>, RPC: <code>worldchain-mainnet.g.alchemy.com/public</code></div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-content">
             <div class="step-title">Bridge funds to WorldChain</div>
-            <div class="step-desc">Bridge ETH or USDC to WorldChain via the official World App or a cross-chain bridge. WLD tokens work natively.</div>
+            <div class="step-desc">Bridge ETH or USDC to WorldChain via the World App or a cross-chain bridge. WLD tokens work natively.</div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-content">
             <div class="step-title">Swap on Uniswap V3</div>
-            <div class="step-desc">Go to <a href="https://app.uniswap.org" target="_blank" style="color:var(--accent2)">app.uniswap.org</a>, select WorldChain, and swap WLD or USDC.e for GSK. Import token: <code>0xdBfDf67A5fC32498297eCa1c7C596ad901674F12</code></div>
+            <div class="step-desc">Go to <a href="https://app.uniswap.org" target="_blank" style="color:var(--accent2)">app.uniswap.org</a>, select WorldChain, swap WLD or USDC.e for GSK. Import: <code>0xdBfDf67A5fC32498297eCa1c7C596ad901674F12</code></div>
           </div>
         </div>
         <div class="step">
@@ -604,10 +683,16 @@
             <div class="link-sub">WorldChain</div>
           </div>
         </a>
+        <a class="link-card" href="https://dexscreener.com/worldchain/0x923422071e0ec06c93d315471ff0655903c9f166" target="_blank">
+          <span class="icon">📊</span>
+          <div>
+            <div class="link-label">DexScreener</div>
+            <div class="link-sub">GSK Chart</div>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <p>Giskard (GSK) · WorldChain · Contract: 0xdBfDf67...4F12</p>
       <p style="margin-top:8px">
@@ -616,7 +701,7 @@
         <a href="https://app.uniswap.org">Uniswap V3</a>
       </p>
       <p style="margin-top:12px; color:#475569">
-        Not financial advice. DYOR. Supply anchored to UN World Population Prospects 2024.
+        Not financial advice. Supply anchored to UN World Population Prospects 2024. Named after R. Giskard Reventlov, Isaac Asimov.
       </p>
     </footer>
   </div>
